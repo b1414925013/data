@@ -1,0 +1,92 @@
+1.查看Linux系统是32位还是64位
+getconf LONG_BIT
+
+2.获取当前时间
+date +%Y-%m-%d" "%T
+
+3.查看文件夹大小
+du -sh /root
+
+4.查看修改主机名
+hostname
+vim /etc/sysconfig/network 
+修改hostname的值
+
+5.重启
+reboot
+
+6.关机
+halt
+
+7.添加用户
+useradd angela（用户名）
+要修改用户名才能登录
+passwd angela（用户名）   按提示输入密码
+
+8.删除用户
+userdel -r angela（用户名）
+
+9.查看当前所在的工作目录
+pwd
+
+10.查看有谁在线
+who  查看当前在线
+last 查看最近的登录历史记录
+
+11.文件系统操作
+ls 查看目录子节点
+ls -al -a显示隐藏文件 -l以更详细的列表形式显示
+
+12.切换目录
+cd 
+
+13.创建文件夹
+mkdir aaa
+mkdir -p aaa/bbb/ccc
+
+14.删除文件夹
+rmdir aaa
+rm -rf aaa
+
+15.修改文件夹名称
+mv （源文件） （修改后文件）
+
+16.创建文件
+touch somefile.1  创建空文件
+echo "aasdfasdfasdfasdfas" > somefile.2  利用重定向，将字符输出到文件中，会覆盖原内容
+echo "aasdfasdfasdfasdfas" >> somefile.2  利用重定向，将字符追加输出到文件中，不会覆盖原内容
+
+17.vim操作
+	1.首先会进入“一般模式”，此模式只接受各种快捷键，不能编辑文件内容
+	2.按i键，就会从一般模式进入编辑模式，此模式下，敲入的都是文件内容
+	3.编辑完成之后，按Esc键退出编辑模式，回到一般模式：
+	4.再按：，进入“底行命令模式"，输入wg命令，回车即可
+
+18.解决克隆后eth0不见的问题
+直接修改/etc/sysconfig/network-script/ifcfg-eth0
+删掉UUID HWADDR
+配置静态地址
+然后：
+rm-rfl T/etc/udev/rules.d/70-persistent-net.rules
+然后reboot
+
+19.添加开机自启动
+vi /etc/rc.local 编辑文件
+添加类似如下内容： cd /root/apache-tomcat-6.0.37/bin
+                   ./startup.sh
+			
+20.修改虚拟机是否启用图形界面
+vi /etc/inittab  文件
+将id:5:initdefault:  修改为id:3:initdefault:
+
+21.给普通用户加入sudo执行权限
+切换到root
+然后 vi /etc/sudoers   加入一行
+root   ALL=(ALL)    ALL
+hadoop ALL=(ALL)    ALL
+
+22.临时关闭防火墙
+	service iptables stop
+永久关闭防火墙
+chkconfig iptables off
+chkconfig iptables --list  查看各个启动级别的防火墙开关情况

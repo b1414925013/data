@@ -1,0 +1,23 @@
+删除目标文件夹及子文件夹.lastUpdated后缀文件
+del /a /f /s /q D:\develop\.m2\repository\*.lastUpdated
+
+
+导出到自定义目录中在maven项目下创建lib文件夹，输入以下命令
+mvn dependency:copy-dependencies -DoutputDirectory=lib
+maven项目所依赖的jar包都会复制到项目目录下的lib目录下
+
+
+--安装第三方jar包到本地仓库
+----进入jar包所在目录运行
+mvn install:install-file -DgroupId=com.alibaba -DartifactId=fastjson -Dversion=1.1.37 -Dfile=fastjson-1.1.37.jar -Dpackaging=jar
+
+<!-- 由于上传maven中心比较慢，相当浪费时间，因此后续版本不在上传的maven中心，可以像如下方式使用 -->
+<!-- Since uploading the maven center is slow and time consuming, the subsequent 
+       version is not in the uploaded maven center and can be used as follows -->
+<dependency>
+    <groupId>com.0opslab</groupId>
+    <artifactId>opslabJutil</artifactId>
+    <version>3.0.0</version>
+    <scope>system</scope>
+    <systemPath>${project.basedir}/libs/opslabJutil-3.0.0.jar</systemPath>
+</dependency>

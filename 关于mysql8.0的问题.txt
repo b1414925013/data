@@ -1,0 +1,22 @@
+8.0版本mysql变更，原为5.0版本
+原来：driverClassName=com.mysql.jdbc.Driver
+变更为：driverClassName=com.mysql.cj.jdbc.Driver
+
+原来：url=jdbc:mysql://127.0.0.1:3306/travel
+变更为：url=jdbc:mysql://127.0.0.1:3306/travel?useUnicode=true&characterEncoding=UTF-8&useSSL=false&serverTimezone=UTC
+
+原来：<dependency>
+			<groupId>mysql</groupId>
+			<artifactId>mysql-connector-java</artifactId>
+			<version>5.1.26</version>
+			<scope>compile</scope>
+      </dependency>
+变更为：<dependency>
+			<groupId>mysql</groupId>
+			<artifactId>mysql-connector-java</artifactId>
+			<version>8.0.18</version>
+			<scope>compile</scope>
+        </dependency>
+		
+		
+show variables like '%dir%'; 查看mysql数据库的data目录地址

@@ -1,0 +1,55 @@
+1.查看所有的数据库
+show databases;
+2.查看所有的表 
+show tables;
+3.建表
+create table t_first(id int,name string,salary string);
+4.插入数据
+insert into table t_first values(1,'jack','100');
+insert into table t_first values(2,'jack','200');
+insert into table t_first values(3,'jack','300');
+insert into table t_first values(4,'jack','400');
+insert into table t_first values(5,'jack','500');
+
+insert into table t_first values(1,'jack','100'),(2,'jack','200'),(3,'jack','300'),(4,'jack','400'),(5,'jack','500');
+
+5.清除表中数据
+truncate table t_first;
+6.删除表
+drop table if exists t_first;
+7.修改表的名称
+alter table t_first rename to t_first_new;
+alter table t_first_new rename to t_first;
+8.查看表详情
+desc t_first;
+desc formatted t_first;
+9.查询表内容
+select * from t_first;
+10.给数据表添加一个字段
+alter table t_first ADD COLUMNS (currency STRING COMMENT 'BIZHONG');
+11.可以在hive命令行执行以下语句显示当前数据库：
+select current_database();
+
+创建能够从文件导入的数据表
+create table user_info (id bigint, account string, name  string, age int) row format delimited fields terminated by '\t';
+insert into table user_info values(1,'jack','100',100),(2,'jack','200',200),(3,'jack','300',300),(4,'jack','400',400),(5,'jack','500',500);
+加载文件中数据到hive
+load data local inpath "/root/test.txt" into table user_info;
+
+
+
+创建分区数据表
+create table t_order_pt(id int,name string,rongliang string,price double) partitioned by(month string) row format delimited fields terminated by '\t';
+加载文件数据到分区数据表
+load data local inpath "/home/hadoop/hivetestdata/xxx. data' into table t_order_pt partition(month='201401');
+插入数据到分区数据表
+insert into table t_order_pt partition(month='201401') values(1,'jack','100',100);
+查询分区数据（将分区看成一个列）
+select * from t_order_pt where month='201401';
+显示分区数据表的所有分区
+show partitions t_order_pt;
+
+
+
+通过参数直接调用hive数据库查询
+hive -S -e 'select * from t_first';
