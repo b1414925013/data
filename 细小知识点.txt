@@ -1,11 +1,11 @@
 删除目标文件夹及子文件夹.lastUpdated后缀文件
 del /a /f /s /q D:\develop\.m2\repository\*.lastUpdated
-
+------------------------------------------------------------------------------------
 
 导出到自定义目录中在maven项目下创建lib文件夹，输入以下命令
 mvn dependency:copy-dependencies -DoutputDirectory=lib
 maven项目所依赖的jar包都会复制到项目目录下的lib目录下
-
+------------------------------------------------------------------------------------
 
 --安装第三方jar包到本地仓库
 ----进入jar包所在目录运行
@@ -21,3 +21,11 @@ mvn install:install-file -DgroupId=com.alibaba -DartifactId=fastjson -Dversion=1
     <scope>system</scope>
     <systemPath>${project.basedir}/libs/opslabJutil-3.0.0.jar</systemPath>
 </dependency>
+------------------------------------------------------------------------------------
+
+Windows 如何设置“实际是英文路径，显示为中文名称”的文件夹
+LocalizedResourceName=XXX，其中 XXX 为你自定义的文件夹名；
+------------------------------------------------------------------------------------
+
+选择帐号时自动填写密码 chrome://flags/#fill-on-account-select（在用户明确指定某一帐户时自动填写其关联密码）
+将网页另存为 MHTML #save-page-as-mhtml（将网页保存为单个文件）

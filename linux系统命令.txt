@@ -63,11 +63,11 @@ echo "aasdfasdfasdfasdfas" >> somefile.2  利用重定向，将字符追加输�
 	4.再按：，进入“底行命令模式"，输入wg命令，回车即可
 
 18.解决克隆后eth0不见的问题
-直接修改/etc/sysconfig/network-script/ifcfg-eth0
+直接修改/etc/sysconfig/network-scripts/ifcfg-eth0
 删掉UUID HWADDR
 配置静态地址
 然后：
-rm-rfl T/etc/udev/rules.d/70-persistent-net.rules
+rm -rf "/etc/udev/rules.d/70-persistent-net.rules"
 然后reboot
 
 19.添加开机自启动
@@ -77,7 +77,7 @@ vi /etc/rc.local 编辑文件
 			
 20.修改虚拟机是否启用图形界面
 vi /etc/inittab  文件
-将id:5:initdefault:  修改为id:3:initdefault:
+将id:5:initdefault:  修改为id:3:initdefault:(不启用界面)
 
 21.给普通用户加入sudo执行权限
 切换到root
@@ -90,3 +90,23 @@ hadoop ALL=(ALL)    ALL
 永久关闭防火墙
 chkconfig iptables off
 chkconfig iptables --list  查看各个启动级别的防火墙开关情况
+
+23.配置静态地址
+/etc/sysconfig/network-scripts/ifcfg-ens33  网卡是哪个就用那个查看第18条
+/etc/sysconfig/network-scripts/ifcfg-eth0
+修改ifcfg-ens33文件（后缀33可能变化）
+配置完以后要把注释文件删除，并保证空格正确
+
+DEVICE=eth0               #使用的网卡名称
+HWADDR=00:0C:29:79:2E:C3   #使用的网卡MAC地址
+TYPE=Ethernet
+ONBOOT=yes
+BOOTPROTO=static
+NM_CONTROLLED=yes 
+IPADDR=192.168.17.133   #最终要使用的ip地址  192.168.217为虚拟机分配的网关
+NETMASK=255.255.255.0    #默认
+GATEWAY=192.168.17.2     #虚拟机虚拟网络设置界面 NAT设置->网关ip查看
+DNS1=192.168.0.1        #能联网的网关，主机ipconfig查看联网的主网卡
+
+24.重启网卡
+service network restart 
