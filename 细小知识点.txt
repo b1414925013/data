@@ -29,3 +29,33 @@ LocalizedResourceName=XXX，其中 XXX 为你自定义的文件夹名；
 
 选择帐号时自动填写密码 chrome://flags/#fill-on-account-select（在用户明确指定某一帐户时自动填写其关联密码）
 将网页另存为 MHTML #save-page-as-mhtml（将网页保存为单个文件）
+------------------------------------------------------------------------------------
+
+驱动下载镜像：
+http://npm.taobao.org/mirrors
+google 驱动镜像：http://npm.taobao.org/mirrors/chromedriver/
+
+<script>
+    window.onload = function(){
+        //找到td
+        var t1 = document.getElementById('t1');
+        //获取父节点元素
+        var tr = t1.parentNode;
+        tr.style.backgroundColor = 'yellow';
+        //获取子元素节点
+        var t2 = tr.firstElementChild;
+        t2.innerText = '111';
+        var t3 = tr.lastElementChild;
+        t3.innerText = '333';
+        //前一个元素节点
+        var t4 = t3.previousElementSibling;
+        t4.innerText = '改变了'
+        //后一个元素节点
+        /*var t5 = t4.nextElementSibling;
+        t5.innerText = '12';*/
+    }
+</script>
+————————————————
+版权声明：本文为CSDN博主「枕梦」的原创文章，遵循 CC 4.0 BY-SA 版权协议，转载请附上原文出处链接及本声明。
+原文链接：https://blog.csdn.net/qq_37768482/article/details/76099582
+------------------------------------------------------------------------------------
