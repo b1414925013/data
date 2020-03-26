@@ -59,3 +59,9 @@ google 驱动镜像：http://npm.taobao.org/mirrors/chromedriver/
 版权声明：本文为CSDN博主「枕梦」的原创文章，遵循 CC 4.0 BY-SA 版权协议，转载请附上原文出处链接及本声明。
 原文链接：https://blog.csdn.net/qq_37768482/article/details/76099582
 ------------------------------------------------------------------------------------
+
+window.localStorage.getItem("name"));
+var storage = window.sessionStorage.getItem("name");  
+————————————————
+版权声明：本文为CSDN博主「CasoMomery」的原创文章，遵循 CC 4.0 BY-SA 版权协议，转载请附上原文出处链接及本声明。
+原文链接：https://blog.csdn.net/fcdd123/article/details/56286106
