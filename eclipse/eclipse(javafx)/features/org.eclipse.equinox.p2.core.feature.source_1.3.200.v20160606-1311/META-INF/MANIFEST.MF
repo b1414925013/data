@@ -1,0 +1,21 @@
+Manifest-Version: 1.0
+Archiver-Version: Plexus Archiver
+Built-By: e4Build
+Created-By: Apache Maven
+Build-Jdk: 1.8.0_51
+
+Name: build.properties
+SHA-256-Digest: KdwcaFuSjL0hr6Ob07naqE94ptQSWyLZYBvZQzxtdwo=
+
+Name: epl-v10.html
+SHA-256-Digest: mpbQ2vmKpvtKpTDTmcdCxmEhsL2uSh9/+iLSE14d9/0=
+
+Name: feature.xml
+SHA-256-Digest: I8/79PhkPJdLdvt6U/emkEsvH8dAoQZjR2965AS5K70=
+
+Name: feature.properties
+SHA-256-Digest: PyU1dIXhpUGQ58I8AEYDT/Akk2InXEhXCkDW6kzQtAA=
+
+Name: license.html
+SHA-256-Digest: X315zLynvdLZ4DaYSopgxruQUUEadA3FOPNviC+YO24=
+

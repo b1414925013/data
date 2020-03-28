@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feature
+      id="org.eclipse.sdk"
+      label="%featureName"
+      version="4.6.0.v20160606-1342"
+      provider-name="%providerName">
+
+   <description>
+      %description
+   </description>
+
+   <copyright>
+      %copyright
+   </copyright>
+
+   <license url="%licenseURL">
+      %license
+   </license>
+
+   <includes
+         id="org.eclipse.platform"
+         version="4.6.0.v20160606-1342"/>
+
+   <includes
+         id="org.eclipse.platform.source"
+         version="4.6.0.v20160606-1342"/>
+
+   <includes
+         id="org.eclipse.cvs"
+         version="1.4.300.v20160606-1100"/>
+
+   <includes
+         id="org.eclipse.cvs.source"
+         version="1.4.300.v20160606-1100"/>
+
+   <includes
+         id="org.eclipse.jdt"
+         version="3.12.0.v20160606-1100"/>
+
+   <includes
+         id="org.eclipse.jdt.source"
+         version="3.12.0.v20160606-1100"/>
+
+   <includes
+         id="org.eclipse.pde"
+         version="3.12.0.v20160606-1100"/>
+
+   <includes
+         id="org.eclipse.pde.source"
+         version="3.12.0.v20160606-1100"/>
+
+   <includes
+         id="org.eclipse.help"
+         version="2.2.0.v20160606-1100"/>
+
+   <includes
+         id="org.eclipse.help.source"
+         version="2.2.0.v20160606-1100"/>
+
+   <requires>
+      <import feature="org.eclipse.emf.common.source" version="2.7.0" match="compatible"/>
+      <import feature="org.eclipse.emf.ecore.source" version="2.7.0" match="compatible"/>
+      <import feature="org.eclipse.ecf.core.source.feature" version="1.1.0" match="compatible"/>
+      <import feature="org.eclipse.ecf.core.ssl.source.feature" version="1.0.0" match="compatible"/>
+      <import feature="org.eclipse.ecf.filetransfer.source.feature" version="3.9.0" match="compatible"/>
+      <import feature="org.eclipse.ecf.filetransfer.httpclient4.source.feature" version="3.8.0" match="compatible"/>
+      <import feature="org.eclipse.ecf.filetransfer.httpclient4.ssl.source.feature" version="1.0.0" match="compatible"/>
+      <import feature="org.eclipse.ecf.filetransfer.ssl.source.feature" version="1.0.0" match="compatible"/>
+   </requires>
+
+   <plugin
+         id="org.eclipse.sdk"
+         download-size="231"
+         install-size="278"
+         version="4.6.0.v20160606-1100"/>
+
+</feature>

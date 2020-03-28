@@ -1,0 +1,15 @@
+Manifest-Version: 1.0
+Build-Jdk: 1.6.0_45
+Built-By: marc
+Created-By: Apache Maven
+Archiver-Version: Plexus Archiver
+
+Name: about.html
+SHA1-Digest: R2txz77zEoLHRLN4rWVWGK51t4g=
+
+Name: feature.xml
+SHA1-Digest: QE3MJBfFUPDlMnWgq2LFgmvgJUo=
+
+Name: feature.properties
+SHA1-Digest: T0z3HSR41xbMPmA5RD76BbYQ8DY=
+

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feature id="org.eclipse.cvs.source" version="1.4.300.v20160606-1100" label="%featureName" provider-name="%providerName">
+  <includes id="org.eclipse.cvs" version="1.4.300.v20160606-1100"/>
+  <description>
+      %description
+   </description>
+  <copyright>
+      %copyright
+   </copyright>
+  <license url="%licenseURL">
+      %license
+   </license>
+  <plugin id="org.eclipse.team.cvs.core.source" version="3.4.0.v20160418-1534" download-size="0" install-size="0" unpack="false"/>
+  <plugin id="org.eclipse.team.cvs.ssh2.source" version="3.3.0.v20160418-1534" download-size="0" install-size="0" unpack="false"/>
+  <plugin id="org.eclipse.team.cvs.ui.source" version="3.4.0.v20160518-1906" download-size="0" install-size="0" unpack="false"/>
+</feature>
