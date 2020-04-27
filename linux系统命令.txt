@@ -110,3 +110,12 @@ DNS1=192.168.0.1        #能联网的网关，主机ipconfig查看联网的主�
 
 24.重启网卡
 service network restart 
+
+25.linux 新开一个终端并在新终端中执行命令
+	
+   #!/bin/bash
+   gnome-terminal -t "title-name" -x bash -c "sh ./run.sh;exec bash;"
+   
+-t 为打开终端的标题，便于区分。
+-x 后面的为要在打开的终端中执行的命令，根据需要自己修改就行了。
+最后的exec bash;是让打开的终端在执行完脚本后不关闭。
