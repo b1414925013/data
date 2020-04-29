@@ -2,8 +2,8 @@
 del /a /f /s /q D:\develop\.m2\repository\*.lastUpdated
 ------------------------------------------------------------------------------------
 
-导出到自定义目录中在maven项目下创建lib文件夹，输入以下命令
-mvn dependency:copy-dependencies -DoutputDirectory=lib
+导出到自定义目录中在maven项目下创建libFile文件夹，输入以下命令
+mvn dependency:copy-dependencies -DoutputDirectory=libFile
 maven项目所依赖的jar包都会复制到项目目录下的lib目录下
 ------------------------------------------------------------------------------------
 
