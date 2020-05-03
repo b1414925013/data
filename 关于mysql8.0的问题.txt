@@ -20,3 +20,12 @@
 		
 		
 show variables like '%dir%'; 查看mysql数据库的data目录地址
+
+#=======================================================================
+#查询表信息
+select table_name, table_comment, create_time, update_time from information_schema.tables where table_schema = (select database());
+  
+ 
+#=======================================================================
+#查询字段信息(table_schema:表所在数据库,table_name:你要查的表)
+select * from information_schema.columns where table_schema = 'zhufu' and table_name = 'himall_bank'; 

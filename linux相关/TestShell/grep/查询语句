@@ -1,0 +1,11 @@
+https://blog.csdn.net/kakabuqinuo/article/details/99845797?depth_1-
+
+获取dev_id字段的值
+cat test.json | sed 's/,/\n/g' | grep "dev_id" | sed 's/:/\n/g' | sed '1d' | sed 's/}//g'
+
+获取dev_name字段的值
+cat test.json | sed 's/,/\n/g' | grep "dev_name" | sed 's/:/\n/g' | sed '1d' | sed 's/"//g'
+
+获取dev_name为mylinux对应的dev_id的值
+cat tsp_inst.cfg | sed 's/,/\n/g' |egrep "dev_name|dev_id" |grep -B 1 "mylinux\"" | grep "dev_id" |awk -F':' '{print $2}'
+cat tsp_inst.cfg | sed 's/,/\n/g' |egrep "dev_name|dev_id" |grep -B 1 ".*mylinux\"$" | grep "dev_id" |awk -F':' '{print $2}'
