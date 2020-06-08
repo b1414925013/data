@@ -22,5 +22,19 @@ https://blog.csdn.net/wjnf012/article/details/80422313
 	
 7.创建vue项目
 	切换到项目存放路径  vue ui 
+	
+  创建vue项目2
+	vue init webpack-simple vue-demo01(项目名称)
+	cd vue-demo01
+	cnpm install /npm install  (安装依赖项)
+	npm run dev
+	
+  创建vue项目3
+	vue init webpack vue-demo01
+	cd vue-demo01
+	cnpm install /npm install
+	npm run dev
+8.项目中安装组件
+	cnpm install vue-resource --save (可以将组件写入package.js)
 
 
