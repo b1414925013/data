@@ -65,3 +65,35 @@ var storage = window.sessionStorage.getItem("name");
 ————————————————
 版权声明：本文为CSDN博主「CasoMomery」的原创文章，遵循 CC 4.0 BY-SA 版权协议，转载请附上原文出处链接及本声明。
 原文链接：https://blog.csdn.net/fcdd123/article/details/56286106
+
+遍历javascript
+var arr = document.querySelectorAll("thead th div.ev_divHed_Text");
+for(key in arr){
+    console.log("第" + key + "次遍历:" +arr[key].innerText);
+} 
+
+定时debug
+setTimeout("debugger", 3000);
+
+window.parent.parent.parent.parent.parent===window.top
+
+window.parent.location.href 
+
+window.self===window.top
+
+=======================================================================================
+allure serve		生成报表数据,并自动开启一个随机端口的访问页面
+allure generate		只生成报表数据	
+io.qameta.allure:allure-maven:serve
+
+start nginx
+nginx -s reload
+nginx -s quit
+=======================================================================================
+myChart.on('click', function(params){
+            // 当鼠标点击事件触发时，在控制台输出params
+            console.log(params);
+        })
+		
+var myChart = echarts.init(document.getElementById("view-chart"));
+=======================================================================================
