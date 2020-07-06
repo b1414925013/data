@@ -1,0 +1,22 @@
+Clover 文件管理
+FsCapture 截图软件
+Snipaste 截图,贴图软件
+JsonView json格式化
+HiJson 	json格式化
+Remote Desktop Organizer 可视化连接远程机
+FileZilla	Ftp文件传输
+BCompare	文件比对
+PostMan	接口工具
+MobaXterm	linux连接工具
+Finalshell	linux连接工具
+HTML Js 格式化工具
+jd-gui	反编译工具
+luyten	反编译工具
+xmlPad	xml文件格式化
+eDiary	电子笔记本
+Dbeaver	数据库连接工具
+Hbuilder	前端开发工具
+时间戳转换工具
+Typora	md编辑器
+EditPlus	文本编辑器
+notepad++	文本编辑器
