@@ -1,0 +1,5 @@
+修改jmeter.properties文件，解决返回值乱码问题
+sampleresult.default.encoding=UTF-8  
+
+修改jmeter.properties文件，解决每次打开都是中文
+language=zh_CN

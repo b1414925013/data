@@ -1,0 +1,149 @@
+CentOS7下安装JDK详细过程	https://www.cnblogs.com/sxdcgaq8080/p/7492426.html
+
+Centos7安装tomcat8   https://www.cnblogs.com/Ada-123456/p/9786172.html      修改"/var/local/tomcat8.5.57/conf/server.xml"文件，添加	
+URIEncoding="UTF-8"
+
+Centos7安装jenkins   admin/b55c8945c49b412dbcd42212cca00ae0("/root/.jenkins/secrets/initialAdminPassword")
+	https://blog.csdn.net/s78365126/article/details/106908686#comments_12631975     地址为/root/.jenkins/updates/
+	jenkins 安装提示 离线 该Jenkins实例似乎已离线	https://blog.csdn.net/luoww1/article/details/100097154
+
+Centos7安装maven
+	https://www.cnblogs.com/laoayi/p/12867990.html
+	
+Centos7离线安装mysql8
+	https://www.cnblogs.com/quchunhui/p/11115339.html
+	
+Centos7 虚拟机IP 变动解决方法
+	https://blog.csdn.net/qq_42129399/article/details/84996122
+	
+Centos7.6安装redis6.0.6
+	https://blog.csdn.net/zhengwei424/article/details/105901955/
+	重启redis
+		https://www.cnblogs.com/music-liang/p/13159357.html
+
+
+下载centos7镜像地址		http://mirrors.aliyun.com/centos/7/isos/x86_64/
+
+
+虚拟机安装centos7教程		https://blog.csdn.net/weixin_40067052/article/details/79346698
+
+root密码 root
+admin  bjf4531421$
+
+ifconfig	查询ip地址
+
+/var/local/   第三方软件安装地址
+
+cat /etc/redhat-release		查看linux版本
+
+uname -r		查看linux内核版本
+
+service network restart  重启网络
+
+centos7 wget无法解析主机域名的解决办法  https://www.cnblogs.com/phw110/p/11646311.html
+cat /etc/resolv.conf
+修改为  nameserver 8.8.8.8 (重启网络以后会返回到最初值)
+
+Centos7下安装Docker（详细安装教程）https://blog.csdn.net/u014069688/article/details/100532774
+
+
+阿里云镜像加速地址  https://cr.console.aliyun.com/cn-hangzhou/instances/mirrors
+docker添加阿里云镜像加速器		https://www.cnblogs.com/linjiqin/p/10813285.html
+					{
+						"registry-mirrors": ["https://oprnx44n.mirror.aliyuncs.com"]
+					}
+
+sudo systemctl daemon-reload
+sudo systemctl restart docker
+
+CentOS 7 执行service iptables start出现redirecting to systemctl ...Failed to ...not loaded https://www.cnblogs.com/HUIWANG/articles/12298628.html
+
+
+docker helloword演示
+docker pull hello-world
+docker images
+docker run hello-world
+
+docker 命令
+docker version
+docker info
+docker help
+
+
+docker images 查看本地镜像
+docker images -a 显示所有镜像
+docker images -q 显示镜像的id
+docker images --digests --no-trunc 列出镜像全部信息，全id
+
+docker rm id/name 删除某个容器
+docker rm -f id/name 强制删除某个容器
+docker rm -f $(docker ps -a -q) 强制删除所有容器
+docker ps -a -q | xargs docker rm  强制删除所有容器
+
+docker rmi id/name 删除某个镜像
+docker rmi -f id/name 强制删除某个镜像
+docker restart id/name 重启一个容器
+
+docker search xxx	查找docker镜像（docker search redis）
+docker search -s 30 tomcat 查找点赞数超过30的tomcat
+
+
+docker ps 查看当前正在运行的容器
+
+docker ps -a 查看所有容器的状态
+docker ps -l 查看上一次运行的容器
+docker ps -n 3 查看上三次运行的容器
+
+docker start/stop id/name 启动/停止某个容器
+
+docker attach id 进入某个容器(使用exit退出后容器也跟着停止运行)
+
+docker exec -ti id 启动一个伪终端以交互式的方式进入某个容器（使用exit退出后容器不停止运行）
+
+docker exec -ti id /bin/bash
+
+容器中使用Ctrl+P+Q快捷键回到本机（容器不退出）
+
+docker run --name test -ti ubuntu /bin/bash  复制ubuntu容器并且重命名为test且运行，然后以伪终端交互式方式进入容器，运行bash
+
+docker build -t soar/centos:7.1 .  通过当前目录下的Dockerfile创建一个名为soar/centos:7.1的镜像
+
+docker run -d -p 2222:22 --name test soar/centos:7.1  以镜像soar/centos:7.1创建名为test的容器，并以后台模式运行，并做端口映射到宿主机2222端口，P参数重启容器宿主机端口会发生改变
+
+docker run -it -p 8888:8080 tomcat  
+
+docker commit -m=“提交的描述信息” -a=“作者” 容器ID 要创建的目标镜像名:[标签名]   提交镜像
+
+docker run -it -v /宿主机绝对路径目录:/容器内目录	镜像名   （容器目录与宿主机目录映射）
+
+
+安装mysql5.7
+docker pull mysql:5.7
+
+docker run -p 3306:3306 
+--name mysql 
+-v /dockerData/mysql/conf:/etc/mysql/conf.d 
+-v /dockerData/mysql/logs:/logs 
+-v /dockerData/mysql/data:/var/lib/mysql 
+-e MYSQL_ROOT_PASSWORD=123456 
+-d mysql:5.7
+ 
+命令说明：
+-p 12345:3306：将主机的12345端口映射到docker容器的3306端口。
+--name mysql：运行服务名字
+-v /dockerData/mysql/conf:/etc/mysql/conf.d ：将主机/dockerData/mysql录下的conf/my.cnf 挂载到容器的 /etc/mysql/conf.d
+-v /dockerData/mysql/logs:/logs：将主机/dockerData/mysql目录下的 logs 目录挂载到容器的 /logs。
+-v /dockerData/mysql/data:/var/lib/mysql ：将主机/dockerData/mysql目录下的data目录挂载到容器的 /var/lib/mysql 
+-e MYSQL_ROOT_PASSWORD=123456：初始化 root 用户的密码。
+-d mysql:5.6 : 后台程序运行mysql5.7
+
+docker exec -it MySQL运行成功后的容器ID     /bin/bash   进入执行命令
+
+
+安装redis5
+docker pull redis:5
+
+docker run -p 6379:6379 
+-v /dockerData/redis/data:/data 
+-v /dockerData/redis/conf/redis.conf:/usr/local/etc/redis/redis.conf  
+-d redis:5 redis-server /usr/local/etc/redis/redis.conf --appendonly yes
