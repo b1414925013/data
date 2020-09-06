@@ -1,0 +1,6 @@
+document.querySelector("#lg").innerHTML='请尽情吩咐小度'
+var lgStyle = document.querySelector("#lg").style;
+lgStyle.setProperty("font-size","70px");
+lgStyle.setProperty("position","relative");
+lgStyle.setProperty("top","70px");
+============================================================

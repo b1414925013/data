@@ -1,0 +1,6 @@
+1.安装chinese语言包
+
+2.npm i -g typescript  安装typescript解析包
+
+3.npm i -g ts-node  安装ts->node解析器
+

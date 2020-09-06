@@ -20,6 +20,9 @@ Centos7.6安装redis6.0.6
 	https://blog.csdn.net/zhengwei424/article/details/105901955/
 	重启redis
 		https://www.cnblogs.com/music-liang/p/13159357.html
+		
+Centos7.6安装Git-两种方式详细教程
+	https://www.cnblogs.com/fuzongle/p/12830572.html
 
 
 下载centos7镜像地址		http://mirrors.aliyun.com/centos/7/isos/x86_64/
