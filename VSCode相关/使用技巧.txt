@@ -4,3 +4,32 @@
 
 3.npm i -g ts-node  安装ts->node解析器
 
+4.npm install -g electron	安装electron桌面工具
+
+	Electron——使用JavaScript编写跨平台桌面应用  https://zhuanlan.zhihu.com/p/35439412
+	cnpm install electron-prebuilt -g   全局安装
+	cnpm install electron-prebuilt --save-dev   单一项目安装
+
+我是第一次用vscode有一个权限的坑，需要改一下权限：
+需要搜索：power shell 以管理员身份打开，输入：
+set-ExecutionPolicy RemoteSigned
+回车然后选择：y
+
+
+5.vscode常用插件
+	Chinese（Simplified）language 语言插件
+	Auto Rename Tag 标签自动重命名
+	代码美化工具 Beautify
+	如果你对思考怎么写一个css的名称很苦恼的话还可以装个IntelliSense for CSS class names in HTML插件
+	图标库Material Icon Theme
+	view in Browser 静态网页可以支持直接在默认浏览器预览
+	JavaScript (ES6) code snippets支持最新的ES6语法，支持很多代码快捷公式
+	
+	
+VSCode插件配置  https://www.e-learn.cn/content/qita/2086035
+VScode前端开发常用插件 https://blog.csdn.net/qq_41725450/article/details/94023535
+vscode前端常用插件推荐，搭建JQuery、Vue等开发环境 https://blog.csdn.net/shunfa888/article/details/79606277
+前端开发者必备的40个VSCode插件！	https://zhuanlan.zhihu.com/p/57389333
+VScode在前端开发的过程中常用插件	https://www.jianshu.com/p/104062d013fe
+
+ 

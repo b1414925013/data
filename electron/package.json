@@ -1,0 +1,33 @@
+{
+  "name": "code_2",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "packager": "electron-packager ./ HelloWorld --all --out ./dist  --overwrite --icon=./build/icon.ico"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "electron": "^10.1.2",
+    "electron-builder": "^22.8.0",
+    "electron-packager": "^15.1.0"
+  },
+  "build": {
+    "appId": "com.example.app",
+    "productName": "测试",
+    "directories": {
+      "buildResources": "build",
+      "output": "dist"
+    },
+    "win": {
+      "target": [
+        "nsis",
+        "zip"
+      ],
+      "icon": "build/icon.ico"
+    }
+  }
+}
