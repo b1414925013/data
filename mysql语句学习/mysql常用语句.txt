@@ -1,0 +1,57 @@
+# 创建mysql存储过程
+DELIMITER $$
+
+USE `mybatis_plus`$$
+
+DROP PROCEDURE IF EXISTS `proc_initData`$$
+
+CREATE DEFINER=`root`@`localhost` PROCEDURE `proc_initData`()
+BEGIN
+  DECLARE i INT DEFAULT 1 ;
+  WHILE
+    i <= 1000 DO -- 这里写insert语句
+    INSERT INTO `mybatis_plus`.`test` (`name`, `age`, `date`) 
+    VALUES
+      (
+        CONCAT('name_', i),
+        18+ ROUND(RAND() * 6+5),
+        (SELECT 
+          DATE(
+            FROM_UNIXTIME(
+              UNIX_TIMESTAMP('2017-01-01') + FLOOR(
+                RAND() * (
+                  UNIX_TIMESTAMP('2018-08-08') - UNIX_TIMESTAMP('2017-01-01') + 1
+                )
+              )
+            )
+          ))
+      ) ;
+    SET i = i + 1 ;
+  END WHILE ;
+END$$
+
+DELIMITER ;
+
+# 执行创建过程
+CALL proc_initData(); 
+
+# 清空表内容
+TRUNCATE TABLE test;
+
+# 生成UUID
+SELECT UUID() `UUID`;
+SELECT REPLACE(UUID(),"-","") AS UUID;
+
+# 生成随机字符串
+select substring(MD5(RAND()),1,20)
+
+# 生成时间段内的随机时间
+SELECT DATE(FROM_UNIXTIME(
+ UNIX_TIMESTAMP('2017-01-01') 
+ + FLOOR(
+   RAND() * ( UNIX_TIMESTAMP('2018-08-08') - UNIX_TIMESTAMP('2017-01-01') + 1 )
+ )
+)) AS DATE;
+
+# 生成随机密码
+cat /dev/urandom | LC_ALL=C tr -dc "[:alnum:]" | fold -w 10 |head -10
