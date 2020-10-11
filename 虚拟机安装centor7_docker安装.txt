@@ -23,6 +23,8 @@ Centos7.6安装redis6.0.6
 		
 Centos7.6安装Git-两种方式详细教程
 	https://www.cnblogs.com/fuzongle/p/12830572.html
+	
+CentOS7多虚拟机连接需要保证在同一个GATEWAY，ip设置在同一网段
 
 
 下载centos7镜像地址		http://mirrors.aliyun.com/centos/7/isos/x86_64/

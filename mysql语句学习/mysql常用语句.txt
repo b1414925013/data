@@ -55,3 +55,57 @@ SELECT DATE(FROM_UNIXTIME(
 
 # 生成随机密码
 cat /dev/urandom | LC_ALL=C tr -dc "[:alnum:]" | fold -w 10 |head -10
+
+-- 查询数据文件地址
+SHOW GLOBAL VARIABLES LIKE "datadir";
+
+-- 创建表的时候分区
+DROP TABLE IF EXISTS employees;
+CREATE TABLE employees(
+    id INT NOT NULL,
+    fname VARCHAR(30),
+    lname VARCHAR(30),
+    hired DATE NOT NULL DEFAULT '1970-01-01',
+    separated DATE NOT NULL DEFAULT '9999-12-31',
+    job_code INT NOT NULL DEFAULT 0,
+    store_id INT NOT NULL DEFAULT 0
+)ENGINE=MYISAM DEFAULT CHARSET=utf8
+PARTITION BY RANGE(store_id)(
+    PARTITION p0 VALUES LESS THAN (6),
+    PARTITION p1 VALUES LESS THAN (11),
+    PARTITION p2 VALUES LESS THAN (16),
+    PARTITION p3 VALUES LESS THAN (21),
+  PARTITION p4 VALUES LESS THAN MAXVALUE 
+);
+-- 插入测试数据
+INSERT INTO employees (id,fname,lname,hired,store_id) VALUES(1,'张三','张','2015-05-04',1);
+INSERT INTO employees (id,fname,lname,hired,store_id) VALUES(2,'李四','李','2016-10-01',5);
+INSERT INTO employees (id,fname,lname,hired,store_id) VALUES(3,'王五','王','2016-11-14',10);
+INSERT INTO employees (id,fname,lname,hired,store_id) VALUES(4,'赵六','赵','2017-08-24',15);
+INSERT INTO employees (id,fname,lname,hired,store_id) VALUES(5,'田七','田','2018-05-20',20);
+-- 删除分区
+ALTER TABLE employees DROP PARTITION p0;
+-- 查询p0分区数据
+SELECT * FROM employees PARTITION(p0);
+-- 删除表的所有分区:
+ALTER TABLE employees REMOVE PARTITIONING;-- 不会丢失数据
+-- 给已经存在的表进行分区
+ALTER TABLE employees PARTITION BY RANGE (store_id) 
+(PARTITION p0 VALUES LESS THAN (6),
+ PARTITION p1 VALUES LESS THAN (11),
+ PARTITION p2 VALUES LESS THAN (16),
+ PARTITION p3 VALUES LESS THAN (21),
+ PARTITION p4 VALUES LESS THAN MAXVALUE); 
+-- 可以查看表是不是分区表
+SHOW TABLE STATUS;
+-- 查看表具有哪几个分区、分区的方法、分区中数据的记录数等信息
+SELECT 
+  partition_name part,
+  partition_expression expr,
+  partition_description descr,
+  table_rows 
+FROM
+  information_schema.partitions 
+WHERE table_schema = SCHEMA() 
+  AND table_name = 'employees' ;
+

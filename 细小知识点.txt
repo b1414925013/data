@@ -90,10 +90,5 @@ start nginx
 nginx -s reload
 nginx -s quit
 =======================================================================================
-myChart.on('click', function(params){
-            // 当鼠标点击事件触发时，在控制台输出params
-            console.log(params);
-        })
-		
-var myChart = echarts.init(document.getElementById("view-chart"));
+POM自动化测试框架，关键字驱动框架
 =======================================================================================
