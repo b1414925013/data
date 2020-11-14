@@ -32,6 +32,8 @@ vscode前端常用插件推荐，搭建JQuery、Vue等开发环境 https://blog.
 前端开发者必备的40个VSCode插件！	https://zhuanlan.zhihu.com/p/57389333
 VScode在前端开发的过程中常用插件	https://www.jianshu.com/p/104062d013fe
 
+VSCode 开发Vue必备插件		https://www.cnblogs.com/cbpm-wuhq/p/12355722.html
+
 electron 打包为.asar文件
 	1.安装 npm install -g asar
 	2.打包 asar pack your-app app.asar

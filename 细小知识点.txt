@@ -5,6 +5,8 @@ del /a /f /s /q D:\develop\.m2\repository\*.lastUpdated
 导出到自定义目录中在maven项目下创建libFile文件夹，输入以下命令
 mvn dependency:copy-dependencies -DoutputDirectory=libFile
 maven项目所依赖的jar包都会复制到项目目录下的lib目录下
+安装跳过测试
+mvn install -Dmaven.test.skip=true 
 ------------------------------------------------------------------------------------
 
 --安装第三方jar包到本地仓库
@@ -93,3 +95,4 @@ nginx -s quit
 POM自动化测试框架，关键字驱动框架
 
 =======================================================================================
+https://www.cnblogs.com/xifengxiaoma/p/11106220.html

@@ -26,6 +26,17 @@ Centos7.6安装Git-两种方式详细教程
 	
 CentOS7多虚拟机连接需要保证在同一个GATEWAY，ip设置在同一网段
 
+yum源配置的三种方法
+	https://www.cnblogs.com/yangp/p/8506264.html
+	
+Centos7安装宝塔控制面板
+	https://blog.csdn.net/heian_99/article/details/101266165
+	https://www.bt.cn/bbs/thread-30579-1-1.html
+	外网面板地址: http://111.18.49.34:8888/1c811792
+	内网面板地址: http://192.168.17.134:8888/1c811792
+	username: zudylo7n
+	password: 8765d0c9
+
 
 下载centos7镜像地址		http://mirrors.aliyun.com/centos/7/isos/x86_64/
 
